@@ -11,12 +11,18 @@
         <SplitView x:Name="MainMenu" DisplayMode="CompactOverlay" IsPaneOpen="False" CompactPaneLength="50" OpenPaneLength="150" Margin="0,10,0,0" >
             <SplitView.Pane>
                 <StackPanel Background="Green">
-
+                    <Button x:Name="ExpandPanel" FontFamily="Segoe MDL2 Assets" Background="Transparent" Content="&#xE8C4;" Width="50" Height="50" Click="ShowPanel_Click" />
                     <StackPanel Orientation ="Horizontal">
-                        <Button x:Name="Novo Exame" Background="Transparent" Click="NewExame_Click" Height="50" Width="50"  />
-                        <TextBlock Text="Novo Exame" VerticalAlignment="Center" />
-
-
+                        <Button x:Name="TesteCodigo" FontFamily="Segoe MDL2 Assets" Background="Transparent" Content="&#xE70F;" Click="Teste_Codigo_Click" Height="50" Width="50"  />
+                        <TextBlock Text="Teste Código" VerticalAlignment="Center" />
+                    </StackPanel>
+                    <StackPanel Orientation ="Horizontal">
+                        <Button x:Name="Perfil" FontFamily="Segoe MDL2 Assets" Background="Transparent" Content="&#xE77B;" Click="Perfil_Click" Height="50" Width="50"  />
+                        <TextBlock Text="Perfil" VerticalAlignment="Center" />
+                    </StackPanel>
+                    <StackPanel Orientation ="Horizontal">
+                        <Button x:Name="Biblioteca" FontFamily="Segoe MDL2 Assets" Background="Transparent" Content="&#xE8B7;" Click="Biblioteca_Click" Height="50" Width="50"  />
+                        <TextBlock Text="Biblioteca" VerticalAlignment="Center" />
                     </StackPanel>
                 </StackPanel>
             </SplitView.Pane>

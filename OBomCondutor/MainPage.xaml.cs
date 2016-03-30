@@ -26,5 +26,10 @@ namespace OBomCondutor
         {
             this.InitializeComponent();
         }
+
+        private void ShowPanel_Click(object sender, RoutedEventArgs e)
+        {
+            MainMenu.IsPaneOpen = !MainMenu.IsPaneOpen;
+        }
     }
 }
