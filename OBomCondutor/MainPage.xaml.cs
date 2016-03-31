@@ -31,5 +31,35 @@ namespace OBomCondutor
         {
             MainMenu.IsPaneOpen = !MainMenu.IsPaneOpen;
         }
+
+        private void Teste_Codigo_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Perfil_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Biblioteca_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Settings_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Help_Click (object sender, RoutedEventArgs e)
+        {
+
+        } 
+
+        private void Feedback_Click (object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -11,7 +11,11 @@
         <SplitView x:Name="MainMenu" DisplayMode="CompactOverlay" IsPaneOpen="False" CompactPaneLength="50" OpenPaneLength="150" >
             <SplitView.Pane>
                 <StackPanel Background="Green">
-                    <Button x:Name="ExpandPanel" FontFamily="Segoe MDL2 Assets" Background="Transparent" Content="&#xE700;" Width="50" Height="50" Click="ShowPanel_Click" />
+                    <Button x:Name="ExpandPanel" FontFamily="Segoe MDL2 Assets" Background="Transparent" Content="&#xE700;" Width="50" Height="50" Click="ShowPanel_Click" ClickMode="Press" RenderTransformOrigin="0.5,0.5" >
+                        <Button.RenderTransform>
+                            <CompositeTransform/>
+                        </Button.RenderTransform>
+                    </Button>
                     <StackPanel Orientation ="Horizontal">
                         <Button x:Name="Teste_Codigo" FontFamily="Segoe MDL2 Assets" Background="Transparent" Content="&#xE70F;" Click="Teste_Codigo_Click" Height="50" Width="50"  />
                         <TextBlock Text="Teste Código" VerticalAlignment="Center" />
