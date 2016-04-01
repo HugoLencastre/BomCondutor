@@ -66,5 +66,15 @@ namespace OBomCondutor
         {
 
         }
+
+        private void CommandBar_Opened(object sender, object e)
+        {
+            CommandBar.IsOpen = !CommandBar.IsOpen;
+        }
+
+        private void Submit_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

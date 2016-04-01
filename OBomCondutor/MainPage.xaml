@@ -7,29 +7,38 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <SplitView x:Name="MainMenu" DisplayMode="CompactOverlay" IsPaneOpen="False" CompactPaneLength="50" OpenPaneLength="150" >
-            <SplitView.Pane>
-                <StackPanel Background="Green">
-                    <Button x:Name="ExpandPanel" FontFamily="Segoe MDL2 Assets" Background="Transparent" Content="&#xE700;" Width="50" Height="50" Click="ShowPanel_Click" ClickMode="Press" RenderTransformOrigin="0.5,0.5" >
-                        <Button.RenderTransform>
-                            <CompositeTransform/>
-                        </Button.RenderTransform>
-                    </Button>
-                    <StackPanel Orientation ="Horizontal">
-                        <Button x:Name="Teste_Codigo" FontFamily="Segoe MDL2 Assets" Background="Transparent" Content="&#xE70F;" Click="Teste_Codigo_Click" Height="50" Width="50"  />
-                        <TextBlock Text="Teste Código" VerticalAlignment="Center" />
-                    </StackPanel>
-                    <StackPanel Orientation ="Horizontal">
-                        <Button x:Name="Perfil" FontFamily="Segoe MDL2 Assets" Background="Transparent" Content="&#xE77B;" Click="Perfil_Click" Height="50" Width="50"  />
-                        <TextBlock Text="Perfil" VerticalAlignment="Center" />
-                    </StackPanel>
-                    <StackPanel Orientation ="Horizontal">
-                        <Button x:Name="Biblioteca" FontFamily="Segoe MDL2 Assets" Background="Transparent" Content="&#xE8B7;" Click="Biblioteca_Click" Height="50" Width="50"  />
-                        <TextBlock Text="Biblioteca" VerticalAlignment="Center" />
-                    </StackPanel>
+    <SplitView x:Name="MainMenu" DisplayMode="CompactOverlay"  IsPaneOpen="False" 
+               CompactPaneLength="50" OpenPaneLength="150">
+        <SplitView.Pane>
+            <StackPanel Background="Green">
+                <Button x:Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
+                    Width="50" Height="50" Background="Transparent" Click="ShowPanel_Click"/>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="Teste_Codigo" FontFamily="Segoe MDL2 Assets" Background="Transparent" Content="&#xE70F;" Click="Teste_Codigo_Click" Height="50" Width="50"  />
+                    <TextBlock Text="Teste Código" VerticalAlignment="Center" />
                 </StackPanel>
-            </SplitView.Pane>
-        </SplitView>
-    </Grid>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="Perfil" FontFamily="Segoe MDL2 Assets" Background="Transparent" Content="&#xE77B;" Click="Perfil_Click" Height="50" Width="50"  />
+                    <TextBlock Text="Perfil" VerticalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="Biblioteca" FontFamily="Segoe MDL2 Assets" Background="Transparent" Content="&#xE8B7;" Click="Biblioteca_Click" Height="50" Width="50"  />
+                    <TextBlock Text="Biblioteca" VerticalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" >
+                    <Button x:Name="Settings" FontFamily="Segoe MDL2 Assets" Background="Transparent" Content="&#xE713;" Click="Settings_Click" Height="50" Width="50"  />
+                    <TextBlock Text="Definições" VerticalAlignment="Center" />
+                </StackPanel>
+            </StackPanel>
+        </SplitView.Pane>
+        <SplitView.Content>
+            <Grid Background="White">
+                <CommandBar x:Name="CommandBar" IsOpen="False" VerticalAlignment="Bottom">
+                    <AppBarButton Icon="Back" Label="Voltar" Background="Transparent" />
+                    <AppBarButton Icon="Delete" Label="Cancelar" Background="Transparent" />
+                    <AppBarButton Icon="Accept" Label="Confirmar" Background="Transparent" Click="Submit_Click"/>
+                </CommandBar>
+            </Grid>
+        </SplitView.Content>
+    </SplitView>
 </Page>
