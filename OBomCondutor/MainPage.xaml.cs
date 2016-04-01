@@ -61,5 +61,10 @@ namespace OBomCondutor
         {
 
         }
+
+        private void Change_Theme(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
