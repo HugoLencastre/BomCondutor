@@ -10,30 +10,30 @@
     <SplitView x:Name="MainMenu" DisplayMode="CompactOverlay"  IsPaneOpen="False" 
                CompactPaneLength="50" OpenPaneLength="150">
         <SplitView.Pane>
-            <StackPanel Background="Green">
+            <Grid Background="Green">
                 <Button x:Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
-                    Width="50" Height="50" Background="Transparent" Click="ShowPanel_Click"/>
-                <StackPanel Orientation="Horizontal">
+                    Width="50" Height="50" Background="Transparent" Click="ShowPanel_Click" VerticalAlignment="Top"/>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="0 50 0 0">
                     <Button x:Name="Teste_Codigo" FontFamily="Segoe MDL2 Assets" Background="Transparent" Content="&#xE70F;" Click="Teste_Codigo_Click" Height="50" Width="50"  />
                     <TextBlock Text="Teste Código" VerticalAlignment="Center" />
                 </StackPanel>
-                <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="0 100 0 0">
                     <Button x:Name="Perfil" FontFamily="Segoe MDL2 Assets" Background="Transparent" Content="&#xE77B;" Click="Perfil_Click" Height="50" Width="50"  />
                     <TextBlock Text="Perfil" VerticalAlignment="Center" />
                 </StackPanel>
-                <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Margin="0 150 0 0">
                     <Button x:Name="Biblioteca" FontFamily="Segoe MDL2 Assets" Background="Transparent" Content="&#xE8B7;" Click="Biblioteca_Click" Height="50" Width="50"  />
                     <TextBlock Text="Biblioteca" VerticalAlignment="Center" />
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" >
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" >
                     <Button x:Name="Settings" FontFamily="Segoe MDL2 Assets" Background="Transparent" Content="&#xE713;" Click="Settings_Click" Height="50" Width="50"  />
                     <TextBlock Text="Definições" VerticalAlignment="Center" />
                 </StackPanel>
-            </StackPanel>
+            </Grid>
         </SplitView.Pane>
         <SplitView.Content>
             <Grid Background="White">
-                <CommandBar x:Name="CommandBar" IsOpen="False" VerticalAlignment="Bottom">
+                <CommandBar x:Name="CommandBar" IsOpen="False" VerticalAlignment="Bottom" Background="LightGray">
                     <AppBarButton Icon="Back" Label="Voltar" Background="Transparent" />
                     <AppBarButton Icon="Delete" Label="Cancelar" Background="Transparent" />
                     <AppBarButton Icon="Accept" Label="Confirmar" Background="Transparent" Click="Submit_Click"/>

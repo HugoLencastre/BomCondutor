@@ -9,6 +9,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
     <DeviceId>98CD6FA8-9114-4179-ACA3-38E5D23C77EE</DeviceId>
-    <UseEmulator>false</UseEmulator>
+    <UseEmulator>true</UseEmulator>
+    <UseSimulator>false</UseSimulator>
   </PropertyGroup>
 </Project>
