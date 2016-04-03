@@ -6,8 +6,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-    
-    
+
+
     <SplitView x:Name="MainMenu" DisplayMode="CompactOverlay"  IsPaneOpen="False" CompactPaneLength="50" OpenPaneLength="150">
         <SplitView.Pane>
             <Grid Background="Green">
@@ -34,7 +34,14 @@
         <SplitView.Content>
             <Grid x:Name="TelaPrincipal">
                 <Image Source="Assets/background2.png" Stretch="UniformToFill" HorizontalAlignment="Center"/>
-                <Button x:Name="Teste_Codigo_Button" Background="Green" Content="Teste de Código" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Margin="0,0,0,80" Height="auto" Width="auto" MaxHeight="80" MaxWidth="150"/>
+                <Viewbox>
+                    <TextBlock Text="Passe no exame de código à primeira." 
+                           VerticalAlignment="Center" HorizontalAlignment="Center" 
+                           FontFamily="Segoe UI" FontWeight="Bold" Foreground ="White" 
+                           IsTextScaleFactorEnabled="True" TextWrapping="Wrap" Margin="10,0"/>
+                </Viewbox>
+                <Button x:Name="Teste_Codigo_Button" Background="Green" Content="Teste de Código" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Margin="0,0,0,80" Height="auto" Width="auto" MaxHeight="80" MaxWidth="150" />
+
                 <CommandBar x:Name="CommandBar" IsOpen="False" VerticalAlignment="Bottom" Background="LightGray" IsSticky="True">
                     <AppBarButton Icon="Back" Label="Voltar" Background="Transparent" />
                     <AppBarButton Icon="Delete" Label="Cancelar" Background="Transparent" />
