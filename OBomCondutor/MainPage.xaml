@@ -34,7 +34,7 @@
         <SplitView.Content>
             <Grid>
                 <Grid.Background>
-                    <ImageBrush Stretch="None" ImageSource="C:\Users\Hugo_\Documents\Visual Studio 2015\Projects\BomCondutor\OBomCondutor\Assets\background.jpg" AlignmentY="Top" AlignmentX="Center"/>
+                    <ImageBrush Stretch="UniformToFill" ImageSource="C:\Users\Hugo_\Documents\Visual Studio 2015\Projects\BomCondutor\OBomCondutor\Assets\background.png" AlignmentY="Top" AlignmentX="Center"/>
                 </Grid.Background>
                 <CommandBar x:Name="CommandBar" IsOpen="False" VerticalAlignment="Bottom" Background="LightGray">
                     <AppBarButton Icon="Back" Label="Voltar" Background="Transparent" />
