@@ -33,8 +33,8 @@
         </SplitView.Pane>
         <SplitView.Content>
             <Grid x:Name="TelaPrincipal">
-                <Button x:Name="Teste_Codigo_Button" Background="Green" Content="Teste de Código" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Margin="0,0,0,80" MaxHeight="80" MaxWidth="150" Height="50" Width="150" MinHeight="50" MinWidth="120"/>
                 <Image Source="Assets/background2.png" Stretch="UniformToFill" HorizontalAlignment="Center"/>
+                <Button x:Name="Teste_Codigo_Button" Background="Green" Content="Teste de Código" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Margin="0,0,0,80" Height="auto" Width="auto" MaxHeight="80" MaxWidth="150"/>
                 <CommandBar x:Name="CommandBar" IsOpen="False" VerticalAlignment="Bottom" Background="LightGray" IsSticky="True">
                     <AppBarButton Icon="Back" Label="Voltar" Background="Transparent" />
                     <AppBarButton Icon="Delete" Label="Cancelar" Background="Transparent" />
