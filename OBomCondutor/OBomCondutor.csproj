@@ -111,6 +111,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\background.png" />
+    <Content Include="Assets\background1.png" />
+    <Content Include="Assets\background2.png" />
     <Content Include="Assets\logo_short_white.scale-100.png" />
     <Content Include="Assets\logo_short_white_150x150.scale-100.png" />
     <Content Include="Assets\logo_short_white_310x310.scale-100.png" />

@@ -6,7 +6,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
+    
+    
     <SplitView x:Name="MainMenu" DisplayMode="CompactOverlay"  IsPaneOpen="False" CompactPaneLength="50" OpenPaneLength="150">
         <SplitView.Pane>
             <Grid Background="Green">
@@ -31,8 +32,9 @@
             </Grid>
         </SplitView.Pane>
         <SplitView.Content>
-            <Grid>
-                <Image Source="Assets/background.png" Stretch="UniformToFill" />
+            <Grid x:Name="TelaPrincipal">
+                <Button x:Name="Teste_Codigo_Button" Background="Green" Content="Teste de Código" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Margin="0,0,0,80" MaxHeight="80" MaxWidth="150" Height="50" Width="150" MinHeight="50" MinWidth="120"/>
+                <Image Source="Assets/background2.png" Stretch="UniformToFill" HorizontalAlignment="Center"/>
                 <CommandBar x:Name="CommandBar" IsOpen="False" VerticalAlignment="Bottom" Background="LightGray" IsSticky="True">
                     <AppBarButton Icon="Back" Label="Voltar" Background="Transparent" />
                     <AppBarButton Icon="Delete" Label="Cancelar" Background="Transparent" />
