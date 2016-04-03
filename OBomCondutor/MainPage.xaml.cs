@@ -25,16 +25,7 @@ namespace OBomCondutor
         public MainPage()
         {
             this.InitializeComponent();
-            UpdateBackground("/Assets/background.jpg");
-        }
 
-        void UpdateBackground(String source)
-        {
-            AppBackground.Background = new ImageBrush
-            {
-                ImageSource = source,
-                Stretch = Stretch.None
-            };
         }
 
         private void ShowPanel_Click(object sender, RoutedEventArgs e)

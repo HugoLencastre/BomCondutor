@@ -110,6 +110,7 @@
     <None Include="OBomCondutor_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\background.png" />
     <Content Include="Assets\logo_short_white.scale-100.png" />
     <Content Include="Assets\logo_short_white_150x150.scale-100.png" />
     <Content Include="Assets\logo_short_white_310x310.scale-100.png" />

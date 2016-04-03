@@ -6,9 +6,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-    
-    <SplitView x:Name="MainMenu" DisplayMode="CompactOverlay"  IsPaneOpen="False" 
-               CompactPaneLength="50" OpenPaneLength="150">
+
+    <SplitView x:Name="MainMenu" DisplayMode="CompactOverlay"  IsPaneOpen="False" CompactPaneLength="50" OpenPaneLength="150">
         <SplitView.Pane>
             <Grid Background="Green">
                 <Button x:Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
@@ -33,16 +32,13 @@
         </SplitView.Pane>
         <SplitView.Content>
             <Grid>
-                <Grid.Background>
-                    <ImageBrush Stretch="UniformToFill" ImageSource="C:\Users\Hugo_\Documents\Visual Studio 2015\Projects\BomCondutor\OBomCondutor\Assets\background.png" AlignmentY="Top" AlignmentX="Center"/>
-                </Grid.Background>
-                <CommandBar x:Name="CommandBar" IsOpen="False" VerticalAlignment="Bottom" Background="LightGray">
+                <Image Source="Assets/background.png" Stretch="UniformToFill" />
+                <CommandBar x:Name="CommandBar" IsOpen="False" VerticalAlignment="Bottom" Background="LightGray" IsSticky="True">
                     <AppBarButton Icon="Back" Label="Voltar" Background="Transparent" />
                     <AppBarButton Icon="Delete" Label="Cancelar" Background="Transparent" />
                     <AppBarButton Icon="Accept" Label="Confirmar" Background="Transparent" Click="Submit_Click"/>
                 </CommandBar>
             </Grid>
-            
         </SplitView.Content>
     </SplitView>
 </Page>
