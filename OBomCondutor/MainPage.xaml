@@ -6,7 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-
+    
     <SplitView x:Name="MainMenu" DisplayMode="CompactOverlay"  IsPaneOpen="False" 
                CompactPaneLength="50" OpenPaneLength="150">
         <SplitView.Pane>
@@ -32,13 +32,17 @@
             </Grid>
         </SplitView.Pane>
         <SplitView.Content>
-            <Grid Background="White">
+            <Grid>
+                <Grid.Background>
+                    <ImageBrush Stretch="None" ImageSource="C:\Users\Hugo_\Documents\Visual Studio 2015\Projects\BomCondutor\OBomCondutor\Assets\background.jpg" AlignmentY="Top" AlignmentX="Center"/>
+                </Grid.Background>
                 <CommandBar x:Name="CommandBar" IsOpen="False" VerticalAlignment="Bottom" Background="LightGray">
                     <AppBarButton Icon="Back" Label="Voltar" Background="Transparent" />
                     <AppBarButton Icon="Delete" Label="Cancelar" Background="Transparent" />
                     <AppBarButton Icon="Accept" Label="Confirmar" Background="Transparent" Click="Submit_Click"/>
                 </CommandBar>
             </Grid>
+            
         </SplitView.Content>
     </SplitView>
 </Page>
