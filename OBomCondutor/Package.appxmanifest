@@ -3,7 +3,7 @@
   <Identity Name="61be03d6-46ad-472a-9657-01ca386d9f2f" Publisher="CN=Hugo_" Version="1.0.0.0" />
   <mp:PhoneIdentity PhoneProductId="61be03d6-46ad-472a-9657-01ca386d9f2f" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
-    <DisplayName>OBomCondutor</DisplayName>
+    <DisplayName>BomCondutor</DisplayName>
     <PublisherDisplayName>Yoda Ground Apps</PublisherDisplayName>
     <Logo>Assets\logo_short_white_50x50.png</Logo>
   </Properties>
@@ -21,7 +21,7 @@
             <uap:ShowOn Tile="square150x150Logo" />
           </uap:ShowNameOnTiles>
         </uap:DefaultTile>
-        <uap:SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="green" />
+        <uap:SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="transparent" />
         <uap:InitialRotationPreference>
           <uap:Rotation Preference="portrait" />
           <uap:Rotation Preference="landscape" />

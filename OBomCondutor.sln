@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OBomCondutor", "OBomCondutor\OBomCondutor.csproj", "{E0DD0B66-7976-4B70-ACE8-0384DBE20B4A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BomCondutor", "OBomCondutor\BomCondutor.csproj", "{E0DD0B66-7976-4B70-ACE8-0384DBE20B4A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

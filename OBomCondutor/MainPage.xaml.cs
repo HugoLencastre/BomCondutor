@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Foundation.Metadata;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -22,10 +23,39 @@ namespace OBomCondutor
     /// </summary>
     public sealed partial class MainPage : Page
     {
+
         public MainPage()
         {
             this.InitializeComponent();
+            HideStatusBar();
+        }
 
+        private async void HideStatusBar()
+        {
+            // turn on SystemTray for mobile
+            // don't forget to add a Reference to Windows Mobile Extensions For The UWP
+            if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.UI.ViewManagement.StatusBar"))
+            {
+                var statusbar = Windows.UI.ViewManagement.StatusBar.GetForCurrentView();
+                await statusbar.HideAsync();
+                //statusbar.BackgroundColor = Windows.UI.Colors.Transparent;
+                //statusbar.BackgroundOpacity = 1;
+                //statusbar.ForegroundColor = Windows.UI.Colors.Red;
+            }
+        }
+
+        private async void ShowStatusBar()
+        {
+            // turn on SystemTray for mobile
+            // don't forget to add a Reference to Windows Mobile Extensions For The UWP
+            if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.UI.ViewManagement.StatusBar"))
+            {
+                var statusbar = Windows.UI.ViewManagement.StatusBar.GetForCurrentView();
+                await statusbar.ShowAsync();
+                //statusbar.BackgroundColor = Windows.UI.Colors.Transparent;
+                //statusbar.BackgroundOpacity = 1;
+                //statusbar.ForegroundColor = Windows.UI.Colors.Red;
+            }
         }
 
         private void ShowPanel_Click(object sender, RoutedEventArgs e)
