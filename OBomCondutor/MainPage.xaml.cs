@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.ApplicationModel.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Foundation.Metadata;
+using Windows.UI;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -27,7 +30,35 @@ namespace OBomCondutor
         public MainPage()
         {
             this.InitializeComponent();
+
+            ChangeTitleBar();
+
             HideStatusBar();
+        }
+
+        private void ChangeTitleBar()
+        {
+            if (ApiInformation.IsTypePresent("Windows.UI.ViewManagement.ApplicationView"))
+            {
+                var view = ApplicationView.GetForCurrentView();
+                view.TitleBar.BackgroundColor = Colors.Green;
+                view.TitleBar.ForegroundColor = Colors.White;
+
+                view.TitleBar.ButtonBackgroundColor = Colors.Green;
+                view.TitleBar.ButtonForegroundColor = Colors.White;
+
+                view.TitleBar.ButtonHoverBackgroundColor = Colors.LightGreen;
+                view.TitleBar.ButtonHoverForegroundColor = Colors.White;
+
+                view.TitleBar.ButtonPressedBackgroundColor = Colors.LightGreen;
+                view.TitleBar.ButtonPressedForegroundColor = Colors.White;
+
+                view.TitleBar.ButtonInactiveBackgroundColor = Colors.Green;
+                view.TitleBar.ButtonInactiveForegroundColor = Colors.White;
+
+                view.TitleBar.InactiveBackgroundColor = Colors.Green;
+                view.TitleBar.InactiveForegroundColor = Colors.White;
+            }
         }
 
         private async void HideStatusBar()
