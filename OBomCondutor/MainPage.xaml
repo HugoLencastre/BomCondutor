@@ -68,11 +68,11 @@
                     		IsTextScaleFactorEnabled="True" TextAlignment="Center"  />
                     </StackPanel>
                 </Button>
-                <Viewbox Margin="10,10,-10,-10">
+                <Viewbox>
                     <TextBlock 
-                            VerticalAlignment="Center" HorizontalAlignment="Center" 
+                            VerticalAlignment="Center" HorizontalAlignment="Stretch" 
                             FontFamily="Segoe UI" FontWeight="Bold" Foreground ="White" 
-                            IsTextScaleFactorEnabled="True" Margin="10,0"
+                            IsTextScaleFactorEnabled="True"
                             TextAlignment="Center" >
                         Passe no exame de código
                         <LineBreak/> à primeira.
