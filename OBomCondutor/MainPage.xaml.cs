@@ -26,7 +26,7 @@ namespace OBomCondutor
     /// </summary>
     public sealed partial class MainPage : Page
     {
-
+        private Boolean DarkTheme = false;
         public MainPage()
         {
             this.InitializeComponent();
@@ -38,6 +38,7 @@ namespace OBomCondutor
 
         private void ChangeTitleBar()
         {
+            //Verifica se é computador
             if (ApiInformation.IsTypePresent("Windows.UI.ViewManagement.ApplicationView"))
             {
                 var view = ApplicationView.GetForCurrentView();
@@ -61,24 +62,25 @@ namespace OBomCondutor
             }
         }
 
-        private async void HideStatusBar()
+        private /*async*/ void HideStatusBar()
         {
-            // turn on SystemTray for mobile
-            // don't forget to add a Reference to Windows Mobile Extensions For The UWP
+            // Verifica se é telemóvel
             if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.UI.ViewManagement.StatusBar"))
             {
+
                 var statusbar = Windows.UI.ViewManagement.StatusBar.GetForCurrentView();
-                await statusbar.HideAsync();
-                //statusbar.BackgroundColor = Windows.UI.Colors.Transparent;
-                //statusbar.BackgroundOpacity = 1;
-                //statusbar.ForegroundColor = Windows.UI.Colors.Red;
+                //await statusbar.HideAsync(); 
+                // ^ Caso queiram tirar a barra descomentem a 
+                //linha e comentem as 3 seguintes e tirem o comentário de async
+                statusbar.BackgroundColor = Windows.UI.Colors.LightGray;
+                statusbar.BackgroundOpacity = 100;
+                statusbar.ForegroundColor = Windows.UI.Colors.Black;
             }
         }
 
         private async void ShowStatusBar()
         {
-            // turn on SystemTray for mobile
-            // don't forget to add a Reference to Windows Mobile Extensions For The UWP
+            //verifica se é telemóvel
             if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.UI.ViewManagement.StatusBar"))
             {
                 var statusbar = Windows.UI.ViewManagement.StatusBar.GetForCurrentView();

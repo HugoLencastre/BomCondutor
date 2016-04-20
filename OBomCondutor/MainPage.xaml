@@ -55,7 +55,7 @@
                     Width="50" Height="50" FontSize="25" IsTextScaleFactorEnabled="True" 
                         Background="Transparent" Click="ShowPanel_Click" VerticalAlignment="Top" />
 
-                <Button VerticalAlignment="Top" HorizontalAlignment="Right" Width="110" Height="50" Background="Transparent" Click="Perfil_Click">
+                <Button x:Name="EnterButton" VerticalAlignment="Top" HorizontalAlignment="Right" Width="110" Height="50" Background="Transparent" Click="Perfil_Click">
                     <StackPanel Orientation="Horizontal" >
                         <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE78B;" FontSize="23" IsTextScaleFactorEnabled="True" 
                     		TextAlignment="Center" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center" 
