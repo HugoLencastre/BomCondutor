@@ -7,34 +7,42 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <SplitView x:Name="MainMenu" DisplayMode="CompactOverlay"  IsPaneOpen="False" CompactPaneLength="50"  OpenPaneLength="160" PaneBackground="Green">
+    <SplitView x:Name="MainMenu" DisplayMode="CompactOverlay"  IsPaneOpen="False" CompactPaneLength="0"  OpenPaneLength="300" PaneBackground="Green">
         <SplitView.Pane>
             <Grid>
                 <Button x:Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
-                    Width="50" Height="50" Background="Transparent" Click="ShowPanel_Click" VerticalAlignment="Top"/>
-                <Button VerticalAlignment="Top" Width="160" Height="50" Margin="0,50,0,0" Background="Transparent" Click="Teste_Codigo_Click">
+                    Width="50" Height="50" Background="Transparent" Click="ShowPanel_Click" 
+                        VerticalAlignment="Top" FontSize="25" IsTextScaleFactorEnabled="True" />
+                <Button VerticalAlignment="Top" Width="300" Height="50" Margin="0,50,0,0" 
+                        Background="Transparent" Click="Teste_Codigo_Click"
+                        FontSize="25" IsTextScaleFactorEnabled="True">
                     <StackPanel Orientation="Horizontal" >
-                        <TextBlock Margin="4 12 0 0" FontFamily="Segoe MDL2 Assets" Text="&#xE70F;" Height="50" Width="50"  />
-                        <TextBlock Margin="0 10 0 0" Text="Teste Código" FontFamily="Segoe UI" Width="90" />
+                        <TextBlock Margin="0 5 10 0" FontFamily="Segoe MDL2 Assets" Text="&#xE70F;" />
+                        <TextBlock Text="Teste Código" FontFamily="Segoe UI" Width="239" />
                     </StackPanel>
                 </Button>
-                <Button VerticalAlignment="Top" Width="160" Height="50" Margin="0,100,0,0" Background="Transparent" Click="Perfil_Click">
+                <Button VerticalAlignment="Top" Width="300" Height="50" Margin="0,100,0,0" 
+                        Background="Transparent" Click="Perfil_Click"
+                        FontSize="25" IsTextScaleFactorEnabled="True">
                     <StackPanel Orientation="Horizontal" >
-                        <TextBlock Margin="0 12 0 0" FontFamily="Segoe MDL2 Assets" Text="&#xE77B;" Height="50" Width="50"  />
-                        <TextBlock Margin="0 10 0 0" Text="Perfil" FontFamily="Segoe UI" Width="79" />
+                        <TextBlock Margin="0 5 10 0" FontFamily="Segoe MDL2 Assets" Text="&#xE77B;"/>
+                        <TextBlock Text="Perfil" FontFamily="Segoe UI" Width="239" />
                     </StackPanel>
                 </Button>
-                <Button VerticalAlignment="Top" Width="160" Height="50" Margin="0,150,0,0" Background="Transparent" Click="Biblioteca_Click">
+                <Button VerticalAlignment="Top" Width="300" Height="50" Margin="0,150,0,0" 
+                        Background="Transparent" Click="Biblioteca_Click"
+                        FontSize="25" IsTextScaleFactorEnabled="True">
                     <StackPanel Orientation="Horizontal" >
-                        <TextBlock Margin="0 12 0 0" FontFamily="Segoe MDL2 Assets" Text="&#xE8B7;" Height="50" Width="50"  />
-                        <TextBlock Margin="0 10 0 0" Text="Biblioteca" FontFamily="Segoe UI" Width="79" />
+                        <TextBlock Margin="0 5 10 0" FontFamily="Segoe MDL2 Assets" Text="&#xE8B7;"/>
+                        <TextBlock Text="Biblioteca" FontFamily="Segoe UI" Width="239" />
                     </StackPanel>
                 </Button>
-                <Rectangle HorizontalAlignment="Center" Width="150" VerticalAlignment="Bottom" Margin="10 50" Fill="DarkGray" Height="1" IsTapEnabled="False" Visibility="Visible"/>
-                <Button VerticalAlignment="Bottom" Width="160" Height="50" Background="Transparent" Click="Settings_Click">
+                <Rectangle HorizontalAlignment="Center" Width="290" VerticalAlignment="Bottom" Margin="10 50" Fill="DarkGray" Height="1" IsTapEnabled="False" Visibility="Visible"/>
+                <Button VerticalAlignment="Bottom" Width="300" Height="50" Background="Transparent" 
+                        Click="Settings_Click" FontSize="25" IsTextScaleFactorEnabled="True">
                     <StackPanel Orientation="Horizontal" >
-                        <TextBlock Margin="0 12 0 0" FontFamily="Segoe MDL2 Assets" Text="&#xE713;" Height="50" Width="50"  />
-                        <TextBlock Margin="0 10 0 0" Text="Definições" FontFamily="Segoe UI" Width="79" />
+                        <TextBlock Margin="0 5 10 0" FontFamily="Segoe MDL2 Assets" Text="&#xE713;" />
+                        <TextBlock Text="Definições" FontFamily="Segoe UI" Width="239" />
                     </StackPanel>
                 </Button>
             </Grid>
@@ -42,21 +50,25 @@
         <SplitView.Content>
             <Grid x:Name="TelaPrincipal">
                 <Image Source="Assets/background2.png" Stretch="UniformToFill" HorizontalAlignment="Center"/>
-                <Grid x:Name="TelaCima" Background="Transparent">
-                    <Button x:Name="Enter_Icon" Background="Transparent" FontFamily="Segoe MDL2 Assets" Content="&#xE78B;" HorizontalAlignment="Right" VerticalAlignment="Top" Height="24.853" UseLayoutRounding="False" d:LayoutRounding="Auto" Margin="0,-0.445,29.185,0" Width="33.37" >
-                        <Button.RenderTransform>
-                            <CompositeTransform Rotation="90.000" ScaleX ="1.5" ScaleY="1.5"/>
-                        </Button.RenderTransform>
-                    </Button>
-                    <Button x:Name="Enter_Text" Background="Transparent" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,0,0" Height="auto" Width="auto">
-                        <TextBlock Text="Entrar" VerticalAlignment="Center" HorizontalAlignment="Right" 
-                                    FontFamily="Segoe UI" Foreground ="Black" FontSize="25" 
-                                   IsTextScaleFactorEnabled="True" TextAlignment="Center"  />
-                    </Button>
-                    <Button x:Name="Enter_Box"  Background="Transparent" Click="Enter_Click" HorizontalAlignment="Right" VerticalAlignment="Top" Width="105" Height="55"/>
-                </Grid>
+                <Button x:Name="MenuButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
+                    Width="50" Height="50" FontSize="25" IsTextScaleFactorEnabled="True" 
+                        Background="Transparent" Click="ShowPanel_Click" VerticalAlignment="Top" />
 
-                <Viewbox>
+                <Button VerticalAlignment="Top" HorizontalAlignment="Right" Width="110" Height="50" Background="Transparent" Click="Perfil_Click">
+                    <StackPanel Orientation="Horizontal" >
+                        <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE78B;" FontSize="23" IsTextScaleFactorEnabled="True" 
+                    		TextAlignment="Center" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center" 
+                    		HorizontalAlignment="Right" Margin="0,5,0,0" UseLayoutRounding="False" d:LayoutRounding="Auto" >
+                            <TextBlock.RenderTransform>
+                                <CompositeTransform Rotation="90.00"/>
+                            </TextBlock.RenderTransform>
+                        </TextBlock>
+                        <TextBlock Text="Entrar" VerticalAlignment="Center" HorizontalAlignment="Right" 
+                    		FontFamily="Segoe UI" Foreground ="Black" FontSize="25" 
+                    		IsTextScaleFactorEnabled="True" TextAlignment="Center"  />
+                    </StackPanel>
+                </Button>
+                <Viewbox Margin="10,10,-10,-10">
                     <TextBlock 
                             VerticalAlignment="Center" HorizontalAlignment="Center" 
                             FontFamily="Segoe UI" FontWeight="Bold" Foreground ="White" 
