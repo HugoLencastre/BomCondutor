@@ -7,13 +7,14 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <SplitView x:Name="MainMenu" DisplayMode="CompactOverlay"  IsPaneOpen="False" CompactPaneLength="0"  OpenPaneLength="300" PaneBackground="Green">
+    <SplitView x:Name="MainMenu" DisplayMode="CompactOverlay"  IsPaneOpen="False" CompactPaneLength="0"  OpenPaneLength="210" PaneBackground="Green">
         <SplitView.Pane>
             <Grid>
                 <Button x:Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
                     Width="50" Height="50" Background="Transparent" Click="ShowPanel_Click" 
                         VerticalAlignment="Top" FontSize="25" IsTextScaleFactorEnabled="True" />
-                <Button VerticalAlignment="Top" Width="300" Height="50" Margin="0,50,0,0" 
+                
+                <Button VerticalAlignment="Top" Width="auto" Height="50" Margin="0,50,0,0" 
                         Background="Transparent" Click="Teste_Codigo_Click"
                         FontSize="25" IsTextScaleFactorEnabled="True">
                     <StackPanel Orientation="Horizontal" >
@@ -21,7 +22,7 @@
                         <TextBlock Text="Teste Código" FontFamily="Segoe UI" Width="239" />
                     </StackPanel>
                 </Button>
-                <Button VerticalAlignment="Top" Width="300" Height="50" Margin="0,100,0,0" 
+                <Button VerticalAlignment="Top" Width="auto" Height="50" Margin="0,100,0,0" 
                         Background="Transparent" Click="Perfil_Click"
                         FontSize="25" IsTextScaleFactorEnabled="True">
                     <StackPanel Orientation="Horizontal" >
@@ -29,7 +30,7 @@
                         <TextBlock Text="Perfil" FontFamily="Segoe UI" Width="239" />
                     </StackPanel>
                 </Button>
-                <Button VerticalAlignment="Top" Width="300" Height="50" Margin="0,150,0,0" 
+                <Button VerticalAlignment="Top" Width="auto" Height="50" Margin="0,150,0,0" 
                         Background="Transparent" Click="Biblioteca_Click"
                         FontSize="25" IsTextScaleFactorEnabled="True">
                     <StackPanel Orientation="Horizontal" >
@@ -38,7 +39,7 @@
                     </StackPanel>
                 </Button>
                 <Rectangle HorizontalAlignment="Center" Width="290" VerticalAlignment="Bottom" Margin="10 50" Fill="DarkGray" Height="1" IsTapEnabled="False" Visibility="Visible"/>
-                <Button VerticalAlignment="Bottom" Width="300" Height="50" Background="Transparent" 
+                <Button VerticalAlignment="Bottom" Width="auto" Height="50" Background="Transparent" 
                         Click="Settings_Click" FontSize="25" IsTextScaleFactorEnabled="True">
                     <StackPanel Orientation="Horizontal" >
                         <TextBlock Margin="0 5 10 0" FontFamily="Segoe MDL2 Assets" Text="&#xE713;" />
@@ -78,9 +79,13 @@
                         <LineBreak/> à primeira.
                     </TextBlock>
                 </Viewbox>
-                <Button x:Name="Teste_Codigo_Button" Background="Green" Content="Teste de Código" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Margin="0,0,0,80" Height="auto" Width="auto" MaxHeight="80" MaxWidth="150" />
+                <Button x:Name="Teste_Codigo_Button" Background="LightGray" BorderThickness="1" BorderBrush="Black" Content="Teste de Código" 
+                        HorizontalAlignment="Stretch" VerticalAlignment="Bottom" 
+                        Margin="2,0,-2,102" Height="50" Width="200" MaxHeight="50" MaxWidth="200"
+                        IsTextScaleFactorEnabled="True" FontSize="25" />
 
-                <CommandBar x:Name="CommandBar" IsOpen="False" VerticalAlignment="Bottom" Background="LightGray">
+                <CommandBar x:Name="CommandBar" IsOpen="False" IsTextScaleFactorEnabled="True"
+                            VerticalAlignment="Bottom" Background="LightGray">
                     <AppBarButton Icon="Back" Label="Voltar" Background="Transparent" />
                     <AppBarButton Icon="Delete" Label="Cancelar" Background="Transparent" />
                     <AppBarButton Icon="Accept" Label="Confirmar" Background="Transparent" Click="Submit_Click"/>
