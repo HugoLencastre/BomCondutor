@@ -83,7 +83,7 @@ namespace OBomCondutor
                 //linha e comentem as 3 seguintes e tirem o comentário de async
                 statusbar.BackgroundColor = Windows.UI.Colors.Transparent;
                 //statusbar.BackgroundOpacity = 100;
-                statusbar.ForegroundColor = Windows.UI.Colors.Black;
+                //statusbar.ForegroundColor = Windows.UI.Colors.Black;
             }
         }
 
