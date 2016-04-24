@@ -17,6 +17,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
+
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace OBomCondutor
@@ -26,17 +27,23 @@ namespace OBomCondutor
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        private Boolean DarkTheme = false;
+        //private Boolean DarkTheme = false;
         public MainPage()
         {
             this.InitializeComponent();
 
-            ChangeTitleBar();
+            //if PC
+            TitleBar();
 
-            HideStatusBar();
+            //if Smartphone
+            StatusBar();
         }
 
-        private void ChangeTitleBar()
+        #region StatusTitleBar and TitleBar
+
+        //Actualy change the color of the title bar in pc, to green
+
+        private void TitleBar()
         {
             //Verifica se é computador
             if (ApiInformation.IsTypePresent("Windows.UI.ViewManagement.ApplicationView"))
@@ -62,7 +69,9 @@ namespace OBomCondutor
             }
         }
 
-        private /*async*/ void HideStatusBar()
+        //Actualy change the color of the Status bar in smartphone, to grey (i want to put transparent)
+
+        private /*async*/ void StatusBar()
         {
             // Verifica se é telemóvel
             if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.UI.ViewManagement.StatusBar"))
@@ -72,8 +81,8 @@ namespace OBomCondutor
                 //await statusbar.HideAsync(); 
                 // ^ Caso queiram tirar a barra descomentem a 
                 //linha e comentem as 3 seguintes e tirem o comentário de async
-                statusbar.BackgroundColor = Windows.UI.Colors.LightGray;
-                statusbar.BackgroundOpacity = 100;
+                statusbar.BackgroundColor = Windows.UI.Colors.Transparent;
+                //statusbar.BackgroundOpacity = 100;
                 statusbar.ForegroundColor = Windows.UI.Colors.Black;
             }
         }
@@ -90,11 +99,18 @@ namespace OBomCondutor
                 //statusbar.ForegroundColor = Windows.UI.Colors.Red;
             }
         }
+        #endregion
+
+        #region Main Menu Panel Settings
 
         private void ShowPanel_Click(object sender, RoutedEventArgs e)
         {
             MainMenu.IsPaneOpen = !MainMenu.IsPaneOpen;
         }
+
+        #endregion
+
+        #region Menu Buttons
 
         private void Teste_Codigo_Click(object sender, RoutedEventArgs e)
         {
@@ -116,6 +132,10 @@ namespace OBomCondutor
 
         }
 
+        #endregion
+
+        #region Definitions Buttons
+
         private void Help_Click (object sender, RoutedEventArgs e)
         {
 
@@ -131,6 +151,10 @@ namespace OBomCondutor
 
         }
 
+        #endregion
+
+        #region CommandBar Buttons
+
         private void CommandBar_Opened(object sender, object e)
         {
             CommandBar.IsOpen = !CommandBar.IsOpen;
@@ -141,9 +165,16 @@ namespace OBomCondutor
 
         }
 
+        #endregion
+
+        #region Main Frame Button
+
         private void Enter_Click(object sender, RoutedEventArgs e)
         {
 
         }
+
+        #endregion
+
     }
 }

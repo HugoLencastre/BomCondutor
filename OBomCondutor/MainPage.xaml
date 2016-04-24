@@ -79,15 +79,10 @@
                         <LineBreak/> à primeira.
                     </TextBlock>
                 </Viewbox>
-                <Button x:Name="Teste_Codigo_Button" Background="LightGray" BorderThickness="1" BorderBrush="Black" Content="Teste de Código" 
-                        HorizontalAlignment="Stretch" VerticalAlignment="Bottom" 
-                        Margin="2,0,-2,102" Height="50" Width="200" MaxHeight="50" MaxWidth="200"
-                        IsTextScaleFactorEnabled="True" FontSize="25" />
-
                 <CommandBar x:Name="CommandBar" IsOpen="False" IsTextScaleFactorEnabled="True"
                             VerticalAlignment="Bottom" Background="LightGray">
                     <AppBarButton Icon="Back" Label="Voltar" Background="Transparent" />
-                    <AppBarButton Icon="Delete" Label="Cancelar" Background="Transparent" />
+                    <AppBarButton Icon="Cancel" Label="Cancelar" Background="Transparent" />
                     <AppBarButton Icon="Accept" Label="Confirmar" Background="Transparent" Click="Submit_Click"/>
                 </CommandBar>
             </Grid>
