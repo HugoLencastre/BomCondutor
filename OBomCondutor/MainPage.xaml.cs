@@ -114,7 +114,7 @@ namespace OBomCondutor
 
         private void Teste_Codigo_Click(object sender, RoutedEventArgs e)
         {
-            
+            Frame.Navigate(typeof(Teste));
         }
 
         private void Perfil_Click(object sender, RoutedEventArgs e)
