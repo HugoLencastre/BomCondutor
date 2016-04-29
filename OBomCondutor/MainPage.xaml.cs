@@ -82,7 +82,7 @@ namespace OBomCondutor
                 // ^ Caso queiram tirar a barra descomentem a 
                 //linha e comentem as 3 seguintes e tirem o comentário de async
                 statusbar.BackgroundColor = Windows.UI.Colors.Transparent;
-                //statusbar.BackgroundOpacity = 100;
+                statusbar.BackgroundOpacity = 1;
                 //statusbar.ForegroundColor = Windows.UI.Colors.Black;
             }
         }
@@ -129,7 +129,7 @@ namespace OBomCondutor
 
         private void Settings_Click(object sender, RoutedEventArgs e)
         {
-
+            Frame.Navigate(typeof(Settings));
         }
 
         #endregion
@@ -163,6 +163,14 @@ namespace OBomCondutor
         private void Submit_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Back_Click (object sender , RoutedEventArgs e)
+        {
+            if (Frame.CanGoBack)
+            {
+                Frame.GoBack();
+            }
         }
 
         #endregion
