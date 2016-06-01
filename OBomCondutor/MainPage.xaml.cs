@@ -7,6 +7,7 @@ using Windows.ApplicationModel.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Foundation.Metadata;
+using Windows.Storage;
 using Windows.UI;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
@@ -17,7 +18,6 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace OBomCondutor
@@ -25,18 +25,21 @@ namespace OBomCondutor
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
+
     public sealed partial class MainPage : Page
     {
-        //private Boolean DarkTheme = false;
         public MainPage()
         {
             this.InitializeComponent();
+            changeBase();
+            CentralText.Text = (string)ApplicationData.Current.LocalSettings.Values["appTheme"];
 
             //if PC
             TitleBar();
 
             //if Smartphone
             StatusBar();
+
         }
 
         #region StatusTitleBar and TitleBar
@@ -119,58 +122,17 @@ namespace OBomCondutor
 
         private void Perfil_Click(object sender, RoutedEventArgs e)
         {
-
+            //Frame.Navigate(typeof(Perfil));
         }
 
         private void Biblioteca_Click(object sender, RoutedEventArgs e)
         {
-
+            //Frame.Navigate(typeof(Biblioteca));
         }
 
         private void Settings_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(Settings));
-        }
-
-        #endregion
-
-        #region Definitions Buttons
-
-        private void Help_Click (object sender, RoutedEventArgs e)
-        {
-
-        } 
-
-        private void Feedback_Click (object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Change_Theme(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        #endregion
-
-        #region CommandBar Buttons
-
-        private void CommandBar_Opened(object sender, object e)
-        {
-            CommandBar.IsOpen = !CommandBar.IsOpen;
-        }
-
-        private void Submit_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Back_Click (object sender , RoutedEventArgs e)
-        {
-            if (Frame.CanGoBack)
-            {
-                Frame.GoBack();
-            }
         }
 
         #endregion
@@ -184,5 +146,19 @@ namespace OBomCondutor
 
         #endregion
 
+        #region Design
+
+        private void changeBase()
+        {
+            //(alpha , red , green , blue)
+
+            HamburgerButton.Foreground = new SolidColorBrush(Color.FromArgb(255, 0, 0, 0));
+            MenuButton.Foreground = new SolidColorBrush(Color.FromArgb(255, 0, 0, 0));
+            TestText.Foreground = new SolidColorBrush(Color.FromArgb(255, 0, 0, 0));
+            PerfilText.Foreground = new SolidColorBrush(Color.FromArgb(255, 0, 0, 0));
+            BiblioText.Foreground = new SolidColorBrush(Color.FromArgb(255, 0, 0, 0));
+            DefText.Foreground = new SolidColorBrush(Color.FromArgb(255, 0, 0, 0));
+        }
+        #endregion
     }
 }

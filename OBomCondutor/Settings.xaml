@@ -14,7 +14,7 @@
                 <Button x:Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
                     Width="50" Height="50" Background="Transparent" Click="ShowPanel_Click" 
                         VerticalAlignment="Top" FontSize="25" IsTextScaleFactorEnabled="True" />
-                <HyperlinkButton VerticalAlignment="Top" Width="auto" Height="50" Margin="10,50,0,0" 
+                <HyperlinkButton x:Name="HomeText" VerticalAlignment="Top" Width="auto" Height="50" Margin="10,50,0,0" 
                         Background="Transparent" Click="Home_Click" 
                         FontSize="25" IsTextScaleFactorEnabled="True">
                     <StackPanel Orientation="Horizontal"  >
@@ -23,7 +23,7 @@
                         <TextBlock Text="Home" Foreground="Black" FontFamily="Segoe UI" Width="239" />
                     </StackPanel>
                 </HyperlinkButton>
-                <HyperlinkButton VerticalAlignment="Top" Width="auto" Height="50" Margin="10,100,0,0" 
+                <HyperlinkButton x:Name="TestText" VerticalAlignment="Top" Width="auto" Height="50" Margin="10,100,0,0" 
                         Background="Transparent" Click="Teste_Codigo_Click" 
                         FontSize="25" IsTextScaleFactorEnabled="True">
                     <StackPanel Orientation="Horizontal"  >
@@ -32,7 +32,7 @@
                         <TextBlock Text="Teste Código" Foreground="Black" FontFamily="Segoe UI" Width="239" />
                     </StackPanel>
                 </HyperlinkButton>
-                <HyperlinkButton VerticalAlignment="Top" Width="auto" Height="50" Margin="10,150,0,0" 
+                <HyperlinkButton x:Name="PerfilText" VerticalAlignment="Top" Width="auto" Height="50" Margin="10,150,0,0" 
                         Background="Transparent" Click="Perfil_Click"
                         FontSize="25" IsTextScaleFactorEnabled="True">
                     <StackPanel Orientation="Horizontal" >
@@ -40,7 +40,7 @@
                         <TextBlock Text="Perfil" Foreground="Black" FontFamily="Segoe UI" Width="239" />
                     </StackPanel>
                 </HyperlinkButton>
-                <HyperlinkButton VerticalAlignment="Top" Width="auto" Height="50" Margin="10,200,0,0" 
+                <HyperlinkButton x:Name="BiblioText" VerticalAlignment="Top" Width="auto" Height="50" Margin="10,200,0,0" 
                         Background="Transparent" Click="Biblioteca_Click"
                         FontSize="25" IsTextScaleFactorEnabled="True">
                     <StackPanel Orientation="Horizontal" >
@@ -49,7 +49,7 @@
                     </StackPanel>
                 </HyperlinkButton>
                 <Rectangle HorizontalAlignment="Center" Width="290" VerticalAlignment="Bottom" Margin="10 50" Fill="DarkGray" Height="1" IsTapEnabled="False" Visibility="Visible"/>
-                <HyperlinkButton VerticalAlignment="Bottom" Width="auto" Height="50" Background="Transparent" 
+                <HyperlinkButton x:Name="DefText" VerticalAlignment="Bottom" Width="auto" Height="50" Background="Transparent" 
                         Click="Settings_Click" FontSize="25" IsTextScaleFactorEnabled="True" Margin="10,0,0,0">
                     <StackPanel Orientation="Horizontal" >
                         <TextBlock Margin="0 5 10 0" Foreground="Black" FontFamily="Segoe MDL2 Assets" Text="&#xE713;" />
@@ -60,16 +60,16 @@
         </SplitView.Pane>
         <SplitView.Content>
             <Grid x:Name="TelaPrincipalSettings" Background="White">
-                <Grid Background="LightGray" Width="auto" Height=" 50" VerticalAlignment="Top" HorizontalAlignment="Stretch" >
+                <Grid x:Name="TopBar" Background="LightGray" Width="auto" Height=" 50" VerticalAlignment="Top" HorizontalAlignment="Stretch" >
                     <Button x:Name="MenuButton" Foreground="Black" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
                     Width="50" Height="50" FontSize="25" IsTextScaleFactorEnabled="True" 
                         Background="Transparent" Click="ShowPanel_Click" VerticalAlignment="Top" />
-                    <TextBlock Text="Settings" FontSize="25" Margin="50 , 8 "/>
+                    <TextBlock x:Name="SettingsText" Foreground="Black" Text="Settings" FontSize="25" Margin="50 , 8 "/>
                 </Grid>
-                <RelativePanel></RelativePanel>
-                <TextBlock VerticalAlignment="Top" Margin="20 60" FontSize="25" HorizontalAlignment="Stretch" Text="Ola"/>
-                <ToggleSwitch x:Name="OláToggleSwitch" Toggled="OláToggleSwitch_Toggled" HorizontalAlignment="Left" Margin="20,100" VerticalAlignment="Top" Background="Transparent" />
-
+                <TextBlock x:Name="TemaText" Text="Tema Escuro" Margin="20,75"/>
+                <ToggleSwitch x:Name="ToggleSwitch" Toggled="ThemeToggleSwitch" 
+                              HorizontalAlignment="Left" Margin="20,90" VerticalAlignment="Top" 
+                              Background="Transparent" OffContent="Desligado" OnContent="Ligado" />
             </Grid>
         </SplitView.Content>
     </SplitView>

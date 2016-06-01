@@ -5,15 +5,16 @@
     xmlns:local="using:OBomCondutor"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    mc:Ignorable="d" Margin="0,-2,0,2">
 
     <SplitView x:Name="MainMenu"  DisplayMode="CompactOverlay"  IsPaneOpen="False" CompactPaneLength="0"  OpenPaneLength="210" PaneBackground="Green">
         <SplitView.Pane>
             <Grid>
+
                 <Button x:Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
                     Width="50" Height="50" Background="Transparent" Click="ShowPanel_Click" 
                         VerticalAlignment="Top" FontSize="25" IsTextScaleFactorEnabled="True" />
-                <HyperlinkButton VerticalAlignment="Top" Width="auto" Height="50" Margin="10,50,0,0" 
+                <HyperlinkButton x:Name="HomeText" VerticalAlignment="Top" Width="auto" Height="50" Margin="10,50,0,0" 
                         Background="Transparent" Click="Home_Click" 
                         FontSize="25" IsTextScaleFactorEnabled="True">
                     <StackPanel Orientation="Horizontal"  >
@@ -22,7 +23,7 @@
                         <TextBlock Text="Home" Foreground="Black" FontFamily="Segoe UI" Width="239" />
                     </StackPanel>
                 </HyperlinkButton>
-                <HyperlinkButton VerticalAlignment="Top" Width="auto" Height="50" Margin="10,100,0,0" 
+                <HyperlinkButton x:Name="TestText" VerticalAlignment="Top" Width="auto" Height="50" Margin="10,100,0,0" 
                         Background="Transparent" Click="Teste_Codigo_Click" 
                         FontSize="25" IsTextScaleFactorEnabled="True">
                     <StackPanel Orientation="Horizontal"  >
@@ -31,7 +32,7 @@
                         <TextBlock Text="Teste Código" Foreground="Black" FontFamily="Segoe UI" Width="239" />
                     </StackPanel>
                 </HyperlinkButton>
-                <HyperlinkButton VerticalAlignment="Top" Width="auto" Height="50" Margin="10,150,0,0" 
+                <HyperlinkButton x:Name="PerfilText" VerticalAlignment="Top" Width="auto" Height="50" Margin="10,150,0,0" 
                         Background="Transparent" Click="Perfil_Click"
                         FontSize="25" IsTextScaleFactorEnabled="True">
                     <StackPanel Orientation="Horizontal" >
@@ -39,7 +40,7 @@
                         <TextBlock Text="Perfil" Foreground="Black" FontFamily="Segoe UI" Width="239" />
                     </StackPanel>
                 </HyperlinkButton>
-                <HyperlinkButton VerticalAlignment="Top" Width="auto" Height="50" Margin="10,200,0,0" 
+                <HyperlinkButton x:Name="BiblioText" VerticalAlignment="Top" Width="auto" Height="50" Margin="10,200,0,0" 
                         Background="Transparent" Click="Biblioteca_Click"
                         FontSize="25" IsTextScaleFactorEnabled="True">
                     <StackPanel Orientation="Horizontal" >
@@ -48,7 +49,7 @@
                     </StackPanel>
                 </HyperlinkButton>
                 <Rectangle HorizontalAlignment="Center" Width="290" VerticalAlignment="Bottom" Margin="10 50" Fill="DarkGray" Height="1" IsTapEnabled="False" Visibility="Visible"/>
-                <HyperlinkButton VerticalAlignment="Bottom" Width="auto" Height="50" Background="Transparent" 
+                <HyperlinkButton x:Name="DefText" VerticalAlignment="Bottom" Width="auto" Height="50" Background="Transparent" 
                         Click="Settings_Click" FontSize="25" IsTextScaleFactorEnabled="True" Margin="10,0,0,0">
                     <StackPanel Orientation="Horizontal" >
                         <TextBlock Margin="0 5 10 0" Foreground="Black" FontFamily="Segoe MDL2 Assets" Text="&#xE713;" />
@@ -58,36 +59,110 @@
             </Grid>
         </SplitView.Pane>
         <SplitView.Content>
-            <Grid Background="White">
+            <Grid x:Name="TelaPrincipal" Background="White">
                 <Grid Background="LightGray" Width="auto" Height=" 50" VerticalAlignment="Top" HorizontalAlignment="Stretch" >
                     <Button x:Name="MenuButton" Foreground="Black" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
                     Width="50" Height="50" FontSize="25" IsTextScaleFactorEnabled="True" 
                         Background="Transparent" Click="ShowPanel_Click" VerticalAlignment="Top" />
-                    <TextBlock Text="Testes de Código" FontSize="25" Margin="50 , 8 "/>
+                    <TextBlock x:Name="TesteText" Foreground="Black" Text="Testes de Código" FontSize="25" Margin="50 , 8 "/>
                 </Grid>
-                <Grid Background="DarkGray" Width="auto" Height="50" VerticalAlignment="Top" Margin="50,70">
-                    <TextBlock Text="Teste recomendado" FontSize="25" VerticalAlignment="center" 
-                               HorizontalAlignment="Stretch" Foreground="White" TextAlignment="center"/>
-                </Grid>
-                <Button x:Name="NovasButton" VerticalAlignment="Top" IsTextScaleFactorEnabled="True" HorizontalAlignment="Stretch" 
-                        Height="50" Margin="50,120" Background="Transparent" Click="Nova_Click">
-                    <StackPanel Orientation="Horizontal" BorderBrush="LightGray" BorderThickness="2">
-                        <Grid Background="Green" Width="35" >
-                            <TextBlock Text="B" FontSize="25" TextAlignment="center" HorizontalAlignment="Stretch"
-                    			IsTextScaleFactorEnabled="True" Foreground="White" />
-                        </Grid>
-                        <Grid Width="40"/>
-                        <TextBlock Text="Entrar" VerticalAlignment="Center" HorizontalAlignment="Stretch" 
+                <ListView x:Name="List" HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="0,60" >
+                    <ListViewItem>
+                        <Button Width="200" Background="Transparent">
+                            <StackPanel Orientation="Horizontal" Margin="-85,0">
+                                <TextBlock x:Name="TesteB" Text="Testes B" VerticalAlignment="Center" HorizontalAlignment="Right" 
                     		FontFamily="Segoe UI" Foreground ="Black" FontSize="25" 
-                    		IsTextScaleFactorEnabled="True" TextAlignment="Center" />
-                        <Grid Width="40"/>
-                        <Grid Background="Green" Width="35">
-                            <TextBlock FontFamily="Segoe MDL2 Assets" Foreground="White" Text="&#xE00F;" FontSize="23" 
-                    			IsTextScaleFactorEnabled="True" TextAlignment="Center" VerticalAlignment="Center" 
-                    			HorizontalAlignment="Stretch" />
-                        </Grid>
-                    </StackPanel>
-                </Button>
+                    		IsTextScaleFactorEnabled="True" TextAlignment="Center"  />
+                                <TextBlock FontFamily="Segoe MDL2 Assets" Text="          " FontSize="23" IsTextScaleFactorEnabled="True" 
+                    		TextAlignment="Center" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center" 
+                    		HorizontalAlignment="Right" Margin="0,5,0,0"/>
+                                <TextBlock x:Name="TesteBseta" FontFamily="Segoe MDL2 Assets" Text="&#xE00F;" FontSize="23" IsTextScaleFactorEnabled="True" 
+                    		TextAlignment="Center" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center" 
+                    		HorizontalAlignment="Right" Margin="0,5,0,0"/>
+                            </StackPanel>
+                        </Button>
+                    </ListViewItem>
+                    <Rectangle HorizontalAlignment="Center" Width="200" VerticalAlignment="Bottom" Fill="DarkGray" Height="1" IsTapEnabled="False" Visibility="Visible"/>
+                    <ListViewItem>
+                    <Button Width="200" Background="Transparent">
+                        <StackPanel Orientation="Horizontal" Margin="-85,0" >
+                                <TextBlock x:Name="TesteA" Text="Testes A" VerticalAlignment="Center" HorizontalAlignment="Right" 
+                    		FontFamily="Segoe UI" Foreground ="Black" FontSize="25" 
+                    		IsTextScaleFactorEnabled="True" TextAlignment="Center"  />
+                                <TextBlock FontFamily="Segoe MDL2 Assets" Text="          " FontSize="23" IsTextScaleFactorEnabled="True" 
+                    		TextAlignment="Center" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center" 
+                    		HorizontalAlignment="Right" Margin="0,5,0,0"/>
+                                <TextBlock x:Name="TesteAseta" FontFamily="Segoe MDL2 Assets" Text="&#xE00F;" FontSize="23" IsTextScaleFactorEnabled="True" 
+                    		TextAlignment="Center" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center" 
+                    		HorizontalAlignment="Right" Margin="0,5,0,0"/>
+                        </StackPanel>
+                    </Button>
+                    </ListViewItem>
+                    <Rectangle HorizontalAlignment="Center" Width="200" VerticalAlignment="Bottom" Fill="DarkGray" Height="1" IsTapEnabled="False" Visibility="Visible"/>
+                    <ListViewItem>
+                    <Button Width="200" Background="Transparent" >
+                            <StackPanel Orientation="Horizontal" Margin="-85,0">
+                            <TextBlock Text="Testes A + B" VerticalAlignment="Center" HorizontalAlignment="Right" 
+                    		FontFamily="Segoe UI" Foreground ="Black" FontSize="25" 
+                    		IsTextScaleFactorEnabled="True" TextAlignment="Center"  />
+                                <TextBlock FontFamily="Segoe MDL2 Assets" Text="   " FontSize="23" IsTextScaleFactorEnabled="True" 
+                    		TextAlignment="Center" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center" 
+                    		HorizontalAlignment="Right" Margin="0,5,0,0"/>
+                                <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE00F;" FontSize="23" IsTextScaleFactorEnabled="True" 
+                    		TextAlignment="Center" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center" 
+                    		HorizontalAlignment="Right" Margin="0,5,0,0"/>
+                        </StackPanel>
+                    </Button>
+                    </ListViewItem>
+                    <Rectangle HorizontalAlignment="Center" Width="200" VerticalAlignment="Bottom" Fill="DarkGray" Height="1" IsTapEnabled="False" Visibility="Visible"/>
+                    <ListViewItem>
+                    <Button Width="200" Background="Transparent">
+                            <StackPanel Orientation="Horizontal" Margin="-85,0">
+                            <TextBlock Text="Testes AM" VerticalAlignment="Center" HorizontalAlignment="Right" 
+                    		FontFamily="Segoe UI" Foreground ="Black" FontSize="25" 
+                    		IsTextScaleFactorEnabled="True" TextAlignment="Center"  />
+                                <TextBlock FontFamily="Segoe MDL2 Assets" Text="       " FontSize="23" IsTextScaleFactorEnabled="True" 
+                    		TextAlignment="Center" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center" 
+                    		HorizontalAlignment="Right"/>
+                                <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE00F;" FontSize="23" IsTextScaleFactorEnabled="True" 
+                    		TextAlignment="Center" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center" 
+                    		HorizontalAlignment="Right" />
+                        </StackPanel>
+                    </Button>
+                    </ListViewItem>
+                    <Rectangle HorizontalAlignment="Center" Width="200" VerticalAlignment="Bottom" Fill="DarkGray" Height="1" IsTapEnabled="False" Visibility="Visible"/>
+                    <ListViewItem>
+                    <Button Width="200" Background="Transparent">
+                            <StackPanel Orientation="Horizontal" Margin="-85,0">
+                            <TextBlock Text="Testes C" VerticalAlignment="Center" HorizontalAlignment="Left" 
+                    		FontFamily="Segoe UI" Foreground ="Black" FontSize="25" 
+                    		IsTextScaleFactorEnabled="True" TextAlignment="Center"  />
+                                <TextBlock FontFamily="Segoe MDL2 Assets" Text="          " FontSize="23" IsTextScaleFactorEnabled="True" 
+                    		TextAlignment="Center" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center" 
+                    		HorizontalAlignment="Right"/>
+                                <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE00F;" FontSize="23" IsTextScaleFactorEnabled="True" 
+                    		TextAlignment="Center" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center" 
+                    		HorizontalAlignment="Right" Margin="0,5,0,0"/>
+                        </StackPanel>
+                    </Button>
+                    </ListViewItem>
+                    <Rectangle HorizontalAlignment="Center" Width="200" VerticalAlignment="Bottom" Fill="DarkGray" Height="1" IsTapEnabled="False" Visibility="Visible"/>
+                    <ListViewItem>
+                    <Button Width="200" Background="Transparent">
+                            <StackPanel Orientation="Horizontal" Margin="-85,0">
+                            <TextBlock Text="Testes D" VerticalAlignment="Center" HorizontalAlignment="Right" 
+                    		FontFamily="Segoe UI" Foreground ="Black" FontSize="25" 
+                    		IsTextScaleFactorEnabled="True" TextAlignment="Center"  />
+                                <TextBlock FontFamily="Segoe MDL2 Assets" Text="          " FontSize="23" IsTextScaleFactorEnabled="True" 
+                    		TextAlignment="Center" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center" 
+                    		HorizontalAlignment="Right"/>
+                                <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE00F;" FontSize="23" IsTextScaleFactorEnabled="True" 
+                    		TextAlignment="Center" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center" 
+                    		HorizontalAlignment="Right" Margin="0,5,0,0"/>
+                        </StackPanel>
+                    </Button>
+                    </ListViewItem>
+                </ListView>
             </Grid>
         </SplitView.Content>
     </SplitView>

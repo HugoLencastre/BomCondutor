@@ -12,9 +12,9 @@
             <Grid>
                 <Button x:Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
                     Width="50" Height="50" Background="Transparent" Click="ShowPanel_Click" 
-                        VerticalAlignment="Top" FontSize="25" IsTextScaleFactorEnabled="True" />
+                        VerticalAlignment="Top" FontSize="25" IsTextScaleFactorEnabled="True" Foreground="Black" />
                 
-                <HyperlinkButton VerticalAlignment="Top" Width="auto" Height="50" Margin="10,50,0,0" 
+                <HyperlinkButton x:Name="TestText" VerticalAlignment="Top" Width="auto" Height="50" Margin="10,50,0,0" 
                         Background="Transparent" Click="Teste_Codigo_Click" 
                         FontSize="25" IsTextScaleFactorEnabled="True">
                     <StackPanel Orientation="Horizontal"  >
@@ -23,7 +23,7 @@
                         <TextBlock Text="Teste Código" Foreground="Black" FontFamily="Segoe UI" Width="239" />
                     </StackPanel>
                 </HyperlinkButton>
-                <HyperlinkButton VerticalAlignment="Top" Width="auto" Height="50" Margin="10,100,0,0" 
+                <HyperlinkButton x:Name="PerfilText" VerticalAlignment="Top" Width="auto" Height="50" Margin="10,100,0,0" 
                         Background="Transparent" Click="Perfil_Click"
                         FontSize="25" IsTextScaleFactorEnabled="True">
                     <StackPanel Orientation="Horizontal" >
@@ -31,7 +31,7 @@
                         <TextBlock Text="Perfil" Foreground="Black" FontFamily="Segoe UI" Width="239" />
                     </StackPanel>
                 </HyperlinkButton>
-                <HyperlinkButton VerticalAlignment="Top" Width="auto" Height="50" Margin="10,150,0,0" 
+                <HyperlinkButton x:Name="BiblioText" VerticalAlignment="Top" Width="auto" Height="50" Margin="10,150,0,0" 
                         Background="Transparent" Click="Biblioteca_Click"
                         FontSize="25" IsTextScaleFactorEnabled="True">
                     <StackPanel Orientation="Horizontal" >
@@ -40,7 +40,7 @@
                     </StackPanel>
                 </HyperlinkButton>
                 <Rectangle HorizontalAlignment="Center" Width="290" VerticalAlignment="Bottom" Margin="10 50" Fill="DarkGray" Height="1" IsTapEnabled="False" Visibility="Visible"/>
-                <HyperlinkButton VerticalAlignment="Bottom" Width="auto" Height="50" Background="Transparent" 
+                <HyperlinkButton x:Name="DefText" VerticalAlignment="Bottom" Width="auto" Height="50" Background="Transparent" 
                         Click="Settings_Click" FontSize="25" IsTextScaleFactorEnabled="True" Margin="10,0,0,0">
                     <StackPanel Orientation="Horizontal" >
                         <TextBlock Margin="0 5 10 0" Foreground="Black" FontFamily="Segoe MDL2 Assets" Text="&#xE713;" />
@@ -53,39 +53,32 @@
             <Grid x:Name="TelaPrincipal">
                 <Image Source="Assets/background2.png" Stretch="UniformToFill" HorizontalAlignment="Center"/>
                 <Button x:Name="MenuButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
-                    Width="50" Height="50" FontSize="25" IsTextScaleFactorEnabled="True" 
+                    Width="50" Height="50" FontSize="25" Foreground="Black" IsTextScaleFactorEnabled="True" 
                         Background="Transparent" Click="ShowPanel_Click" VerticalAlignment="Top" />
 
-                <Button x:Name="EnterButton" VerticalAlignment="Top" HorizontalAlignment="Right" Width="110" Height="50" Background="Transparent" Click="Perfil_Click">
+                <Button VerticalAlignment="Top" HorizontalAlignment="Right" Width="110" Height="50" Background="Transparent" Click="Perfil_Click">
                     <StackPanel Orientation="Horizontal" >
-                        <TextBlock FontFamily="Segoe MDL2 Assets" Text="&#xE78B;" FontSize="23" IsTextScaleFactorEnabled="True" 
+                        <TextBlock x:Name="IconEnter" Foreground="Black" FontFamily="Segoe MDL2 Assets" Text="&#xE78B;" FontSize="23" IsTextScaleFactorEnabled="True" 
                     		TextAlignment="Center" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Center" 
                     		HorizontalAlignment="Right" Margin="0,5,0,0" UseLayoutRounding="False" d:LayoutRounding="Auto" >
                             <TextBlock.RenderTransform>
                                 <CompositeTransform Rotation="90.00"/>
                             </TextBlock.RenderTransform>
                         </TextBlock>
-                        <TextBlock Text="Entrar" VerticalAlignment="Center" HorizontalAlignment="Right" 
-                    		FontFamily="Segoe UI" Foreground ="Black" FontSize="25" 
+                        <TextBlock x:Name="TextEnter" Text="Entrar" Foreground="Black" VerticalAlignment="Center" HorizontalAlignment="Right" 
+                    		FontFamily="Segoe UI" FontSize="25" 
                     		IsTextScaleFactorEnabled="True" TextAlignment="Center"  />
                     </StackPanel>
                 </Button>
-                <Viewbox>
-                    <TextBlock 
-                            VerticalAlignment="Center" HorizontalAlignment="Stretch" 
+                <Viewbox >
+                    <TextBlock x:Name="CentralText"
+                            VerticalAlignment="Stretch" HorizontalAlignment="Stretch" 
                             FontFamily="Segoe UI" FontWeight="Bold" Foreground ="White" 
-                            IsTextScaleFactorEnabled="True"
-                            TextAlignment="Center" >
+                            IsTextScaleFactorEnabled="True" TextAlignment="Center" >
                         Passe no exame de código
                         <LineBreak/> à primeira.
                     </TextBlock>
                 </Viewbox>
-                <CommandBar x:Name="CommandBar" IsOpen="False" IsTextScaleFactorEnabled="True"
-                            VerticalAlignment="Bottom" Background="LightGray">
-                    <AppBarButton Icon="Back" Label="Voltar" Background="Transparent" />
-                    <AppBarButton Icon="Cancel" Label="Cancelar" Background="Transparent" />
-                    <AppBarButton Icon="Accept" Label="Confirmar" Background="Transparent" Click="Submit_Click"/>
-                </CommandBar>
             </Grid>
         </SplitView.Content>
     </SplitView>
