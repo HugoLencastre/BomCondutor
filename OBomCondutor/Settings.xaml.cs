@@ -29,13 +29,17 @@ namespace OBomCondutor
         public Settings()
         {
             this.InitializeComponent();
+            if (ApplicationData.Current.LocalSettings.Values["appTheme"].Equals("Dark"))
+            {
+                ToggleSwitch.IsOn = true;
+                putBlack();
+                ToggleSwitch.IsOn = true;
+            }
             if (ApplicationData.Current.LocalSettings.Values["appTheme"].Equals("Light"))
             {
+                ToggleSwitch.IsOn = false;
                 putWhite();
-            }
-            else if (ApplicationData.Current.LocalSettings.Values["appTheme"].Equals("Dark"))
-            { 
-                putBlack();
+                ToggleSwitch.IsOn = false;
             }
         }
 
@@ -62,7 +66,7 @@ namespace OBomCondutor
 
         private void Perfil_Click(object sender, RoutedEventArgs e)
         {
-            // Frame.Navigate(typeof(Perfil));
+            Frame.Navigate(typeof(Perfil));
         }
 
         private void Biblioteca_Click(object sender, RoutedEventArgs e)
@@ -86,11 +90,13 @@ namespace OBomCondutor
             {
                 if (ApplicationData.Current.LocalSettings.Values["appTheme"].Equals("Light"))
                 {
+                    ToggleSwitch.IsOn = true;
                     putBlack();
                     ApplicationData.Current.LocalSettings.Values["appTheme"] = "Dark";
                 }
                 else if (ApplicationData.Current.LocalSettings.Values["appTheme"].Equals("Dark"))
                 {
+                    ToggleSwitch.IsOn = false;
                     putWhite();
                     ApplicationData.Current.LocalSettings.Values["appTheme"] = "Light";
                 }
@@ -104,7 +110,6 @@ namespace OBomCondutor
             TelaPrincipalSettings.Background = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
             ToggleSwitch.Foreground = new SolidColorBrush(Color.FromArgb(255, 0, 0, 0));
             TemaText.Foreground = new SolidColorBrush(Color.FromArgb(255, 0, 0, 0));
-            ToggleSwitch.BorderBrush= new SolidColorBrush(Color.FromArgb(255, 0, 0, 0));
         }
 
         private void putBlack()
@@ -114,7 +119,6 @@ namespace OBomCondutor
             TelaPrincipalSettings.Background = new SolidColorBrush(Color.FromArgb(255, 0, 0, 0));
             ToggleSwitch.Foreground = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
             TemaText.Foreground = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
-            ToggleSwitch.BorderBrush = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
         }
 
         private void changeBase()

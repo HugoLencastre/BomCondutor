@@ -1,0 +1,75 @@
+﻿<Page
+    x:Class="OBomCondutor.Perfil"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:OBomCondutor"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.Resources>
+    </Page.Resources>
+
+    <SplitView x:Name="MainMenu" DisplayMode="CompactOverlay"  IsPaneOpen="False" CompactPaneLength="0"  OpenPaneLength="210" PaneBackground="Green">
+        <SplitView.Pane>
+            <Grid>
+                <Button x:Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
+                    Width="50" Height="50" Background="Transparent" Click="ShowPanel_Click" 
+                        VerticalAlignment="Top" FontSize="25" IsTextScaleFactorEnabled="True" />
+                <HyperlinkButton x:Name="HomeText" VerticalAlignment="Top" Width="auto" Height="50" Margin="10,50,0,0" 
+                        Background="Transparent" Click="Home_Click" 
+                        FontSize="25" IsTextScaleFactorEnabled="True">
+                    <StackPanel Orientation="Horizontal"  >
+                        <TextBlock Margin="0 5 10 0" FontFamily="Segoe MDL2 Assets" 
+                                   Text="&#xE80F;" Foreground="Black"/>
+                        <TextBlock Text="Home" Foreground="Black" FontFamily="Segoe UI" Width="239" />
+                    </StackPanel>
+                </HyperlinkButton>
+                <HyperlinkButton x:Name="TestText" VerticalAlignment="Top" Width="auto" Height="50" Margin="10,100,0,0" 
+                        Background="Transparent" Click="Teste_Codigo_Click" 
+                        FontSize="25" IsTextScaleFactorEnabled="True">
+                    <StackPanel Orientation="Horizontal"  >
+                        <TextBlock Margin="0 5 10 0" FontFamily="Segoe MDL2 Assets" 
+                                   Text="&#xE70F;" Foreground="Black"/>
+                        <TextBlock Text="Teste Código" Foreground="Black" FontFamily="Segoe UI" Width="239" />
+                    </StackPanel>
+                </HyperlinkButton>
+                <HyperlinkButton x:Name="PerfilText" VerticalAlignment="Top" Width="auto" Height="50" Margin="10,150,0,0" 
+                        Background="Transparent" Click="Perfil_Click"
+                        FontSize="25" IsTextScaleFactorEnabled="True">
+                    <StackPanel Orientation="Horizontal" >
+                        <TextBlock Margin="0 5 10 0" Foreground="Black" FontFamily="Segoe MDL2 Assets" Text="&#xE77B;"/>
+                        <TextBlock Text="Perfil" Foreground="Black" FontFamily="Segoe UI" Width="239" />
+                    </StackPanel>
+                </HyperlinkButton>
+                <HyperlinkButton x:Name="BiblioText" VerticalAlignment="Top" Width="auto" Height="50" Margin="10,200,0,0" 
+                        Background="Transparent" Click="Biblioteca_Click"
+                        FontSize="25" IsTextScaleFactorEnabled="True">
+                    <StackPanel Orientation="Horizontal" >
+                        <TextBlock Margin="0 5 10 0" Foreground="Black" FontFamily="Segoe MDL2 Assets" Text="&#xE8B7;"/>
+                        <TextBlock Text="Biblioteca" Foreground="Black" FontFamily="Segoe UI" Width="239" />
+                    </StackPanel>
+                </HyperlinkButton>
+                <Rectangle HorizontalAlignment="Center" Width="290" VerticalAlignment="Bottom" Margin="10 50" Fill="DarkGray" Height="1" IsTapEnabled="False" Visibility="Visible"/>
+                <HyperlinkButton x:Name="DefText" VerticalAlignment="Bottom" Width="auto" Height="50" Background="Transparent" 
+                        Click="Settings_Click" FontSize="25" IsTextScaleFactorEnabled="True" Margin="10,0,0,0">
+                    <StackPanel Orientation="Horizontal" >
+                        <TextBlock Margin="0 5 10 0" Foreground="Black" FontFamily="Segoe MDL2 Assets" Text="&#xE713;" />
+                        <TextBlock Text="Definições" Foreground="Black" FontFamily="Segoe UI" Width="239" />
+                    </StackPanel>
+                </HyperlinkButton>
+            </Grid>
+        </SplitView.Pane>
+        <SplitView.Content>
+            <Grid x:Name="TelaPrincipalSettings" Background="White">
+                <Grid x:Name="TopBar" Background="LightGray" Width="auto" Height=" 50" VerticalAlignment="Top" HorizontalAlignment="Stretch" >
+                    <Button x:Name="MenuButton" Foreground="Black" FontFamily="Segoe MDL2 Assets" Content="&#xE700;"
+                    Width="50" Height="50" FontSize="25" IsTextScaleFactorEnabled="True" 
+                        Background="Transparent" Click="ShowPanel_Click" VerticalAlignment="Top" />
+                    <TextBlock x:Name="PerfilTexto" Foreground="Black" Text="Perfil" FontSize="25" Margin="50 , 8 "/>
+                </Grid>
+                <StackPanel x:Name="PrincipalStack" Margin="20,60,20,10">
+                </StackPanel>
+            </Grid>
+        </SplitView.Content>
+    </SplitView>
+</Page>

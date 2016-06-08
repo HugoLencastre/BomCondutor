@@ -70,7 +70,7 @@ namespace OBomCondutor
 
         private void Perfil_Click(object sender, RoutedEventArgs e)
         {
-            // Frame.Navigate(typeof(Perfil));
+            Frame.Navigate(typeof(Perfil));
         }
 
         private void Biblioteca_Click(object sender, RoutedEventArgs e)

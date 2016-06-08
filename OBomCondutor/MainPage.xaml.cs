@@ -32,8 +32,7 @@ namespace OBomCondutor
         {
             this.InitializeComponent();
             changeBase();
-            CentralText.Text = (string)ApplicationData.Current.LocalSettings.Values["appTheme"];
-
+            
             //if PC
             TitleBar();
 
@@ -122,7 +121,7 @@ namespace OBomCondutor
 
         private void Perfil_Click(object sender, RoutedEventArgs e)
         {
-            //Frame.Navigate(typeof(Perfil));
+            Frame.Navigate(typeof(Perfil));
         }
 
         private void Biblioteca_Click(object sender, RoutedEventArgs e)
