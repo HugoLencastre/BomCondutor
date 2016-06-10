@@ -15,6 +15,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
+using CrossPieCharts.UWP;
+using CrossPieCharts.UWP.PieCharts;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -74,24 +76,20 @@ namespace OBomCondutor
                 PrincipalValue = doTexts("PrincipalValue", value + " - Este é o seu nivel corrente");
                 Extra = doTexts("Extra", "Consideramos que está pronto para realizar o exame, até lá continue a fazer exames.");
             }
-            var progress1 = doBars("progress1", 0, 100);
+            var piechart = doPieChart("piechart1", value);
             PrincipalStack.Children.Add(PrincipalValue);
             PrincipalStack.Children.Add(Extra);
-            PrincipalStack.Children.Add(progress1); 
+            PrincipalStack.Children.Add(piechart); 
         }
 
         private void doPrePage()
         {
-            Image img = new Image();
-            /*
-            BitmapImage bitmapImage = new BitmapImage();
-            Uri uri = new Uri("Assets/logo_short_white_310x310.scale-100.png");
-            bitmapImage.UriSource = uri;
-            */
-            img.Name = "Logo";
-            //img.Source = bitmapImage;
-            img.Width = 310;
-            img.Height = 310;
+            String nome = "Logo";
+            String uri = "Assets/logo_short_white_310x310.scale-100.png";
+            int width = 310;
+            int height = 310;
+            Image img = doImage(nome,uri,width,height);
+            
             img.VerticalAlignment = Windows.UI.Xaml.VerticalAlignment.Top;
             img.HorizontalAlignment = Windows.UI.Xaml.HorizontalAlignment.Center;
             img.Margin = new Thickness(20, 100 , 20 , 0);
@@ -106,6 +104,23 @@ namespace OBomCondutor
             PrincipalStack.Children.Add(passwordbox);
         }
 
+        private Image doImage(String name , String location , int width , int height)
+        {
+            BitmapImage img = new BitmapImage();
+            Image imagem = new Image();
+            /*
+            BitmapImage bitmapImage = new BitmapImage();
+            Uri uri = new Uri(location);
+            bitmapImage.UriSource = uri;
+            */
+
+            //imagem.Source = bitmapImage;
+            imagem.Name = name;
+            imagem.Width = width;
+            imagem.Height = height;
+            return imagem;
+        }
+
         private TextBlock doTexts(String name, String text)
         {
             TextBlock textblock = new TextBlock();
@@ -116,15 +131,17 @@ namespace OBomCondutor
             return textblock;
         }
 
-        private ProgressBar doBars(String name, int min, int max) {
-            ProgressBar progress = new ProgressBar();
-            progress.Background = new SolidColorBrush(Color.FromArgb(255, 211, 211, 211));
-            progress.Foreground = new SolidColorBrush(Color.FromArgb(255, 0, 128, 0));
-            progress.Maximum = max;
-            progress.Minimum = min;
-            progress.Value = value;
-            progress.Name = name;
-            return progress;
+        private PieChart doPieChart(String name, int value) {
+            var piechart = new CrossPieCharts.UWP.PieCharts.PieChart
+            {
+                Percentage = value,
+                Segment360Color = new SolidColorBrush(Color.FromArgb(255, 211, 211, 211)),
+                SegmentColor = new SolidColorBrush(Color.FromArgb(255, 0, 128, 0)),
+                Radius = 50,
+                StrokeThickness = 30,
+                Name = name,
+            };
+            return piechart;
         }
 
         private void Login()
