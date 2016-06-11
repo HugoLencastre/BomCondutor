@@ -17,6 +17,7 @@ using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 using CrossPieCharts.UWP;
 using CrossPieCharts.UWP.PieCharts;
+using Windows.UI.Xaml.Shapes;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -40,7 +41,7 @@ namespace OBomCondutor
             //isLogin = false;
             //doPrePage();
             value = 75;
-            AddBars();
+            AddIndiceChartPlusText();
             /*}
             //else if (!isLogin)
             //{
@@ -62,26 +63,52 @@ namespace OBomCondutor
             }*/
         }
 
-        private void AddBars()
+        private void AddIndiceChartPlusText()
         {
+            List<UIElement> lista = new List<UIElement>();
             TextBlock PrincipalValue;
+            TextBlock PrincipalText;
             TextBlock Extra;
+            Rectangle rectangle = doRectangle("rectangle1",2);
+            PrincipalValue = doTexts("PrincipalValue", value + "%");
+            PrincipalText = doTexts("PrincipalText", "Índice Bom Condutor");
             if (value < 70)
             {
-                PrincipalValue = doTexts("PrincipalValue", value + " - Este é o seu nivel corrente");
+                
                 Extra = doTexts("Extra", "Aconselhamos que só realize o exame caso esteja entre o nível 70 e 100");
             }
             else
             {
-                PrincipalValue = doTexts("PrincipalValue", value + " - Este é o seu nivel corrente");
                 Extra = doTexts("Extra", "Consideramos que está pronto para realizar o exame, até lá continue a fazer exames.");
             }
-            var piechart = doPieChart("piechart1", value);
-            PrincipalStack.Children.Add(PrincipalValue);
-            PrincipalStack.Children.Add(Extra);
-            PrincipalStack.Children.Add(piechart); 
+            var piechart = doPieChart("piechart1", value , 70 , 10 , 100 );
+            PrincipalValue.HorizontalAlignment = HorizontalAlignment.Center;
+            PrincipalValue.VerticalAlignment = VerticalAlignment.Top;
+            PrincipalText.HorizontalAlignment = HorizontalAlignment.Center;
+            PrincipalText.VerticalAlignment = VerticalAlignment.Top;
+            piechart.VerticalAlignment = VerticalAlignment.Top;
+            piechart.HorizontalAlignment = HorizontalAlignment.Stretch;
+            Extra.HorizontalAlignment = HorizontalAlignment.Center;
+
+            lista.Add(piechart);
+            lista.Add(PrincipalValue);
+            lista.Add(PrincipalText);
+            lista.Add(rectangle);
+            lista.Add(Extra);
+
+            addChildren(PrincipalStack, lista);
         }
 
+        #region Do zone
+
+        private void addChildren(StackPanel objecto,List<UIElement> lista)
+        {
+            foreach(UIElement temp in lista)
+            {
+                objecto.Children.Add(temp);
+            }
+        }
+    
         private void doPrePage()
         {
             String nome = "Logo";
@@ -131,18 +158,39 @@ namespace OBomCondutor
             return textblock;
         }
 
-        private PieChart doPieChart(String name, int value) {
+        private PieChart doPieChart(String name, int value, int radius , int thickness , int max) {
             var piechart = new CrossPieCharts.UWP.PieCharts.PieChart
             {
-                Percentage = value,
+                Percentage = dotransformValueToPercentage(value, max),
                 Segment360Color = new SolidColorBrush(Color.FromArgb(255, 211, 211, 211)),
                 SegmentColor = new SolidColorBrush(Color.FromArgb(255, 0, 128, 0)),
-                Radius = 50,
-                StrokeThickness = 30,
+                Radius = radius,
+                StrokeThickness = thickness,
                 Name = name,
             };
             return piechart;
         }
+
+        private Rectangle doRectangle(String name,int height)
+        {
+            //bug, não aparece não sei porque. é a primeira vês que estou a adicionar um rectangulo por aqui
+
+            Rectangle rectangle = new Rectangle();
+            rectangle.HorizontalAlignment = HorizontalAlignment.Center;
+            rectangle.Fill = new SolidColorBrush(Color.FromArgb(255, 169, 169, 169));
+            rectangle.Height = height;
+            rectangle.IsTapEnabled = false;
+            rectangle.Visibility = Visibility.Visible;
+            rectangle.Name = name;
+            return rectangle;
+        }
+
+        private int dotransformValueToPercentage(int value, int max)
+        {
+            return (value * 100) / max; 
+        }
+
+        #endregion
 
         private void Login()
         {
