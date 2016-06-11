@@ -18,6 +18,7 @@ using Windows.UI.Xaml.Navigation;
 using CrossPieCharts.UWP;
 using CrossPieCharts.UWP.PieCharts;
 using Windows.UI.Xaml.Shapes;
+using Windows.UI.Xaml.Documents;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -65,23 +66,25 @@ namespace OBomCondutor
 
         private void AddIndiceChartPlusText()
         {
-            List<UIElement> lista = new List<UIElement>();
+            List<UIElement> listaStack = new List<UIElement>();
             TextBlock PrincipalValue;
             TextBlock PrincipalText;
             TextBlock Extra;
-            Rectangle rectangle = doRectangle("rectangle1",2);
+            Rectangle rectangle1 = doRectangle("rectangle1", 1);
+            Rectangle rectangle2 = doRectangle("rectangle2", 1);
+            LineBreak line = doLineBreak();
             PrincipalValue = doTexts("PrincipalValue", value + "%");
-            PrincipalText = doTexts("PrincipalText", "Índice Bom Condutor");
+            PrincipalText = doTexts("PrincipalText", "Índice Bom Condutor \n");
             if (value < 70)
             {
-                
+
                 Extra = doTexts("Extra", "Aconselhamos que só realize o exame caso esteja entre o nível 70 e 100");
             }
             else
             {
                 Extra = doTexts("Extra", "Consideramos que está pronto para realizar o exame, até lá continue a fazer exames.");
             }
-            var piechart = doPieChart("piechart1", value , 70 , 10 , 100 );
+            var piechart = doPieChart("piechart1", value, 70, 10, 100);
             PrincipalValue.HorizontalAlignment = HorizontalAlignment.Center;
             PrincipalValue.VerticalAlignment = VerticalAlignment.Top;
             PrincipalText.HorizontalAlignment = HorizontalAlignment.Center;
@@ -89,14 +92,17 @@ namespace OBomCondutor
             piechart.VerticalAlignment = VerticalAlignment.Top;
             piechart.HorizontalAlignment = HorizontalAlignment.Stretch;
             Extra.HorizontalAlignment = HorizontalAlignment.Center;
+            Extra.FontStretch = Windows.UI.Text.FontStretch.Condensed ;
+            
 
-            lista.Add(piechart);
-            lista.Add(PrincipalValue);
-            lista.Add(PrincipalText);
-            lista.Add(rectangle);
-            lista.Add(Extra);
+            listaStack.Add(piechart);
+            listaStack.Add(PrincipalValue);
+            listaStack.Add(PrincipalText);
+            listaStack.Add(Extra);
+            listaStack.Add(rectangle2);
 
-            addChildren(PrincipalStack, lista);
+
+            addChildren(PrincipalStack, listaStack);
         }
 
         #region Do zone
@@ -108,7 +114,7 @@ namespace OBomCondutor
                 objecto.Children.Add(temp);
             }
         }
-    
+   
         private void doPrePage()
         {
             String nome = "Logo";
@@ -129,6 +135,12 @@ namespace OBomCondutor
             PrincipalStack.Children.Add(img);
             PrincipalStack.Children.Add(textbox);
             PrincipalStack.Children.Add(passwordbox);
+        }
+
+        private LineBreak doLineBreak()
+        {
+            LineBreak line = new LineBreak();
+            return line;
         }
 
         private Image doImage(String name , String location , int width , int height)
@@ -154,7 +166,7 @@ namespace OBomCondutor
             textblock.Name = name;
             textblock.Text = text;
             textblock.FontSize = 25;
-            textblock.IsTextScaleFactorEnabled = true;
+            textblock.TextWrapping = TextWrapping.Wrap;
             return textblock;
         }
 
@@ -176,8 +188,9 @@ namespace OBomCondutor
             //bug, não aparece não sei porque. é a primeira vês que estou a adicionar um rectangulo por aqui
 
             Rectangle rectangle = new Rectangle();
-            rectangle.HorizontalAlignment = HorizontalAlignment.Center;
+            rectangle.HorizontalAlignment = HorizontalAlignment.Stretch;
             rectangle.Fill = new SolidColorBrush(Color.FromArgb(255, 169, 169, 169));
+            rectangle.VerticalAlignment = VerticalAlignment.Top;
             rectangle.Height = height;
             rectangle.IsTapEnabled = false;
             rectangle.Visibility = Visibility.Visible;

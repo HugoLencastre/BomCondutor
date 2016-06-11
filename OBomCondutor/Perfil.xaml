@@ -68,7 +68,7 @@
                         Background="Transparent" Click="ShowPanel_Click" VerticalAlignment="Top" />
                     <TextBlock x:Name="PerfilTexto" Foreground="Black" Text="Perfil" FontSize="25" Margin="50 , 8 "/>
                 </Grid>
-                <StackPanel x:Name="PrincipalStack" Margin="20,60,20,10">
+                <StackPanel x:Name="PrincipalStack" Margin="20,60,20,10" >
                     
                 </StackPanel>
                 
